@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO APP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.0/sweetalert2.min.css" integrity="sha512-YpZXdiMhuP3woCdvg0ou2UPj6l4KQUuf3gbMXTNMgtqTakMInX7h+64CTh+UIvYdA7ctBU2BAA/h4eEhoMEmsg==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="app-bg">
+        <div class="bg-overlay"></div>
+        <section class="row m-0 justify-content-center pb-5">
+            <div class=" col-md-5 mt-5 mb-3">
+                <h1 class=" text-center display-4 mb-3 text-white"> To Do </h1>
+                <form action="" method="post" class=" mb-3">
+                    <div class="input-group">
+                        <input type="text" id="task" class="form-control" placeholder="Add a new task">
+                        <div class="input-group-append">
+                            <button type="submit" class=" btn btn-primary" id="addTask"><i class="fas fa-plus-circle"></i></button>
+                        </div>
+                    </div>
+                </form>
+                
+               <section id="to-do">
+                   
+               </section>
+            </div>
+        </section>
+    </div>
+
+
+     <!-- jQuery library -->
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	 <!-- Popper JS -->
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ 
+	 <!-- Latest compiled JavaScript -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" integrity="sha512-6AXIWogbKpsHvoZJrJtHpIYES4wP8czSj0zk7ZfwOYS8GWYFNSykwdfapt7yQc4ikZytemBu+QyVObzBHJMwYg==" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.0/sweetalert2.min.js" integrity="sha512-V9JHp52ZkrbVVjJqNz/XXYMUOyUfzaGKEGrcD2Ual7n39+UR1yJK0numAHZqkhhGTAH/Klj0KUe4btAZXccw9w==" crossorigin="anonymous"></script>
+     
+     
+     <script id="template" type="x-tmpl-mustache">
+        <div class="card mb-3" id={{ taskNo }}>
+            <div class="card-header">
+                <h4 class="d-inline">Task {{ taskNo }}</h4> 
+                <i class="fas fa-check-square text-primary d-none"></i>
+            </div>
+            <div class="card-body">
+                {{ taskDetail }}
+            </div>
+            <div class="card-footer p-0">
+                <div class="row">
+                    <div class="col btn-group">
+                        <button type="button" class="btn btn-info task-done" data-id={{ taskNo }} id="btn-test" onclick="taskDone(this)" >
+                            <i class="fas fa-check-circle"></i>
+                        </button>
+                        <button type="button" class="btn btn-danger delete-task"  data-id={{ taskNo }} onclick="deleteTask(this)">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+      </script>
+      <script src="./assets/js/app.js"></script>
+</body>
+</html>
