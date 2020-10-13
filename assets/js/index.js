@@ -3,7 +3,7 @@ $(document).ready(function () {
         e.preventDefault();
         if(validateForm())
         {
-            window.location.href = "/app.html"
+            window.location.href = "app.html"
         }
 
     });
